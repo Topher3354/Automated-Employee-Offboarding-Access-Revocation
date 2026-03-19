@@ -1,4 +1,4 @@
-# Use Case 03 — Automated Employee Offboarding & Access Revocation
+# Automated Employee Offboarding & Access Revocation
 
 **Category:** IT Operations & ITSM
 **Author:** Christopher Ayodeji Ojo — [Trublshut](https://whop.com/trublshut)
@@ -61,7 +61,7 @@ Log all actions with timestamps to audit record (SharePoint)
 
 ---
 
-## 🔧 Key Logic
+ Key Logic
 
 - **Immediate account block** — first action in the workflow is disabling sign-in, before anything else
 - **Session revocation** — calls the Entra ID `revokeSignInSessions` API to invalidate all active tokens, even if the user is currently logged in
@@ -73,7 +73,7 @@ Log all actions with timestamps to audit record (SharePoint)
 
 ---
 
-## 📊 Outcomes
+Outcomes
 
 - ✅ Account disabled within minutes of exit confirmation — not days
 - ✅ No orphaned accounts or active sessions left open
@@ -83,7 +83,7 @@ Log all actions with timestamps to audit record (SharePoint)
 
 ---
 
-## 📁 How to Use This
+How to Use This
 
 1. Create an n8n webhook triggered by HR form submission (Microsoft Forms / HRIS)
 2. First node: call Entra ID API to block sign-in (`accountEnabled: false`)
